@@ -46,13 +46,14 @@ public:
             R[i] = a[i + 1] * R[i + 1];
         }
         //构建输出vector
-        vector<int> answer(length);//一定要初始化长度，否则无法使用下标访问
+        vector<int> answer;//一定要初始化长度，否则无法使用下标访问
         //int* answer  = new int[length];
         for(int i = 0; i != length; ++i){
             answer.push_back(L[i] * R[i]);
         }
         return answer;
     }
+    
     //简化一下写法
     vector<int> constructArr(vector<int>& a){
         const unsigned length = a.size();
@@ -73,7 +74,7 @@ public:
 int main(){
     Solution s;
     vector<int> a = {1,2,0,4,0};
-    for(auto c:s.constructArr(a)){
+    for(auto c:s.constructArr2(a)){
        cout << c << " ";
     }
 
