@@ -53,6 +53,28 @@ public:
         }
         return answer;
     }
+    //调用堆试一试
+        vector<int> constructArr1(vector<int>& a) {
+        const unsigned length = a.size();
+        //L为i左侧所有元素的乘积
+        vector<int>* L = new vector<int>(length);
+        (*L)[0] = 1;
+        for (int i = 1; i < length; ++i) {
+            (* L)[i] = a[i - 1] * (*L)[i - 1];
+        }
+        //R为i右侧所有元素乘积,同理
+        vector<int>* R = new vector<int>(length);
+        (*R)[length - 1] = 1;
+        for (int i = length - 2; i >= 0; --i) {
+            (*R)[i] = a[i + 1] * (*R)[i + 1];
+        }
+        //构建输出vector
+        vector<int>* answer = new vector<int>(length);//一定要初始化长度，否则无法使用下标访问
+        for (int i = 0; i < length; ++i) {
+            (*answer)[i] = (*L)[i] * (*R)[i];
+        }
+        return *answer;
+    }
     
     //简化一下写法
     vector<int> constructArr(vector<int>& a){
