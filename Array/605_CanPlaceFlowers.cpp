@@ -24,11 +24,11 @@ bool canPlaceFlowers(vector<int>& flowerbed, int n) {
         if(flowerbed[i] == 0){
             if(i == flowerbed.size() - 1){
                 if(flowerbed[i - 1] == 0){
-                    n--;
+                    --n;
                 }
                 break;
             }else if (flowerbed[i + 1] == 0) {
-                n--;
+                --n;
                 i +=2;
             }else {
                 i += 3;
@@ -40,9 +40,28 @@ bool canPlaceFlowers(vector<int>& flowerbed, int n) {
     return n <= 0;
 }
 
+bool canPlaceFlowers1(vector<int> flowerbed, int n) {
+	for (int i = 0, len = flowerbed.size(); i < len && n > 0;) {
+        //碰到1则跳两格
+		if (flowerbed[i] == 1) {
+			i += 2;
+            /*如果下标i为0,由于前面判断遇到1则连跳两格
+            同时初始情况下不可能有相邻的花，故0的前面也为0，只要判断后一位有没有种花，
+            如果没有则可以种花；另一种情况下，i已是最后一位，而前面没有种花，则此位可以种花*/
+		} else if (i == flowerbed.size() - 1 || flowerbed[i + 1] == 0) {
+			--n;
+			i += 2;
+		} else {
+            //后一位也是1直接跳3格
+			i += 3;
+		}
+	}
+	return n <= 0;
+}
+
 int main(){
     vector<int> v = {1,0,0,0,1,0,0};
-    if (canPlaceFlowers(v,2)) {
+    if (canPlaceFlowers1(v,2)) {
         cout << "yes" << endl;
     }else {
         cout << "no" << endl;
