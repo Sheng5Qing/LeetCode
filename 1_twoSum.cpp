@@ -36,6 +36,7 @@ int main() {
     for (int i = 0; i < examples.size(); i++) {
         vector<int> ans = solve->twoSum(examples[i].nums, examples[i].target);
         if (ans == examples[i].ans) {
+            cout << ans[0] << " " << ans[1] << endl;
             cout << "PASS: CASE " << i << endl;
         } else {
             cout << "FAIL: CASE " << i << endl;
