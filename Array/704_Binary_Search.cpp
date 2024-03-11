@@ -19,6 +19,6 @@ int search(vector<int>& nums, int target) {
         }
     }
     return -1;
-    //如果没有，则按顺序插入，返回插入位置
+    //濡傛灉娌℃湁锛屽垯鎸夐『搴忔彃鍏ワ紝杩斿洖鎻掑叆浣嶇疆
     //return right + 1;
 }

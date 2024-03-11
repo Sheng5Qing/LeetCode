@@ -1,5 +1,5 @@
-/*414.µÚÈı´óµÄÊı*/
-/*¸øÄãÒ»¸ö·Ç¿ÕÊı×é£¬·µ»Ø´ËÊı×éÖĞ µÚÈı´óµÄÊı ¡£Èç¹û²»´æÔÚ£¬Ôò·µ»ØÊı×éÖĞ×î´óµÄÊı¡£*/
+/*414.ç¬¬ä¸‰å¤§çš„æ•°*/
+/*ç»™ä½ ä¸€ä¸ªéç©ºæ•°ç»„ï¼Œè¿”å›æ­¤æ•°ç»„ä¸­ ç¬¬ä¸‰å¤§çš„æ•° ã€‚å¦‚æœä¸å­˜åœ¨ï¼Œåˆ™è¿”å›æ•°ç»„ä¸­æœ€å¤§çš„æ•°ã€‚*/
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -8,8 +8,8 @@ using namespace std;
 
 class Solution {
 public:
-    //±©Á¦½â
-    //ÏÈ´Ó´óµ½Ğ¡ÅÅ¸öĞò
+    //æš´åŠ›è§£
+    //å…ˆä»å¤§åˆ°å°æ’ä¸ªåº
     void quickSortGreater(int left, int right,vector<int> &arr){
         if(left >= right)
             return;
@@ -20,7 +20,7 @@ public:
         int i, j, base, temp;
         i = left;
         j = right;
-        //ÒÔ×î×ó±ßÎª»ù×¼
+        //ä»¥æœ€å·¦è¾¹ä¸ºåŸºå‡†
         base = arr[left];
         while (i < j) {
             while (arr[j] <= base && i < j) {
@@ -35,7 +35,7 @@ public:
                 arr[j] = temp;
             }            
         }
-        //»ù×¼Êı¸´Î»
+        //åŸºå‡†æ•°å¤ä½
         arr[left] = arr[i];
         arr[i] = base;
         quickSortGreater(left, i - 1, arr);

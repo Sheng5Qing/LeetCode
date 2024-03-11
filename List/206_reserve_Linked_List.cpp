@@ -14,13 +14,13 @@ struct ListNode {
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
-        ListNode* tmp; // ±£´æcurµÄÏÂÒ»¸ö½Úµã
+        ListNode* tmp; // ä¿å­˜curçš„ä¸‹ä¸€ä¸ªèŠ‚ç‚¹
         ListNode* cur = head;
         ListNode* pre = NULL;
         while(cur) {
-            tmp = cur->next;  // ±£´æÒ»ÏÂcurµÄÏÂÒ»¸ö½Úµã£¬ÒòÎª½ÓÏÂÀ´Òª¸Ä±äcur->next
-            cur->next = pre; // ·­×ª²Ù×÷
-            // ¸üĞÂpre ºÍ curÖ¸Õë
+            tmp = cur->next;  // ä¿å­˜ä¸€ä¸‹curçš„ä¸‹ä¸€ä¸ªèŠ‚ç‚¹ï¼Œå› ä¸ºæ¥ä¸‹æ¥è¦æ”¹å˜cur->next
+            cur->next = pre; // ç¿»è½¬æ“ä½œ
+            // æ›´æ–°pre å’Œ curæŒ‡é’ˆ
             pre = cur;
             cur = tmp;
         }

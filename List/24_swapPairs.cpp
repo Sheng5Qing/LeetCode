@@ -11,7 +11,7 @@ struct ListNode {
 class Solution {
 public:
 	ListNode *swapPairs(ListNode *head) {
-		//ÉèÖÃÐéÄâÍ·½áµã£¬Í³Ò»²Ù×÷£¬·ñÔò¶ÔµÚÒ»¶þ¸ö½áµãÐèÒªÌØÊâ´¦Àí
+		//è®¾ç½®è™šæ‹Ÿå¤´ç»“ç‚¹ï¼Œç»Ÿä¸€æ“ä½œï¼Œå¦åˆ™å¯¹ç¬¬ä¸€äºŒä¸ªç»“ç‚¹éœ€è¦ç‰¹æ®Šå¤„ç†
     	ListNode *dummyHead = new ListNode(0); 
     	dummyHead->next = head;
     	ListNode *cur = dummyHead;

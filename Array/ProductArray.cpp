@@ -1,7 +1,7 @@
-/*½£Ö¸offer 66.¹¹Ôì³Ë»ıÊı×é*/
-/*¸ø¶¨Ò»¸öÊı×é A[0,1,¡­,n-1]£¬Çë¹¹½¨Ò»¸öÊı×é B[0,1,¡­,n-1]£¬
-ÆäÖĞ?B[i] µÄÖµÊÇÊı×é A ÖĞ³ıÁËÏÂ±ê i ÒÔÍâµÄÔªËØµÄ»ı, 
-¼´?B[i]=A[0]¡ÁA[1]¡Á¡­¡ÁA[i-1]¡ÁA[i+1]¡Á¡­¡ÁA[n-1]¡£²»ÄÜÊ¹ÓÃ³ı·¨¡£
+/*å‰‘æŒ‡offer 66.æ„é€ ä¹˜ç§¯æ•°ç»„*/
+/*ç»™å®šä¸€ä¸ªæ•°ç»„ A[0,1,â€¦,n-1]ï¼Œè¯·æ„å»ºä¸€ä¸ªæ•°ç»„ B[0,1,â€¦,n-1]ï¼Œ
+å…¶ä¸­?B[i] çš„å€¼æ˜¯æ•°ç»„ A ä¸­é™¤äº†ä¸‹æ ‡ i ä»¥å¤–çš„å…ƒç´ çš„ç§¯, 
+å³?B[i]=A[0]Ã—A[1]Ã—â€¦Ã—A[i-1]Ã—A[i+1]Ã—â€¦Ã—A[n-1]ã€‚ä¸èƒ½ä½¿ç”¨é™¤æ³•ã€‚
 */
 #include <iostream>
 #include <vector>
@@ -11,7 +11,7 @@ using namespace std;
 
 class Solution {
 public:
-    //³¬Ê±ÁË£¿£¿£¿¸´ÔÓ¶ÈO(n^2)£¬¹Ö²»µÃ
+    //è¶…æ—¶äº†ï¼Ÿï¼Ÿï¼Ÿå¤æ‚åº¦O(n^2)ï¼Œæ€ªä¸å¾—
     vector<int> constructArr3(vector<int>& a) {
         vector<int> b;
         int ci = 0,cj = 0;
@@ -30,53 +30,53 @@ public:
         return b;
     }
 
-    //¹ıÁË£¬Ê±¼ä¸´ÔÓ¶ÈO(n),
+    //è¿‡äº†ï¼Œæ—¶é—´å¤æ‚åº¦O(n),
     vector<int> constructArr2(vector<int>& a) {
         const unsigned length = a.size();
-        //LÎªi×ó²àËùÓĞÔªËØµÄ³Ë»ı
+        //Lä¸ºiå·¦ä¾§æ‰€æœ‰å…ƒç´ çš„ä¹˜ç§¯
         vector<int> L(length,0);
         L[0] = 1;
         for(int i = 1; i != length; ++i){
             L[i] = a[i - 1] * L[i - 1];
         }
-        //RÎªiÓÒ²àËùÓĞÔªËØ³Ë»ı,Í¬Àí
+        //Rä¸ºiå³ä¾§æ‰€æœ‰å…ƒç´ ä¹˜ç§¯,åŒç†
         vector<int> R(length,0);
         R[length - 1] = 1;
         for(int i = length - 2; i != -1; --i){
             R[i] = a[i + 1] * R[i + 1];
         }
-        //¹¹½¨Êä³övector
-        vector<int> answer;//Ò»¶¨Òª³õÊ¼»¯³¤¶È£¬·ñÔòÎŞ·¨Ê¹ÓÃÏÂ±ê·ÃÎÊ
+        //æ„å»ºè¾“å‡ºvector
+        vector<int> answer;//ä¸€å®šè¦åˆå§‹åŒ–é•¿åº¦ï¼Œå¦åˆ™æ— æ³•ä½¿ç”¨ä¸‹æ ‡è®¿é—®
         //int* answer  = new int[length];
         for(int i = 0; i != length; ++i){
             answer.push_back(L[i] * R[i]);
         }
         return answer;
     }
-    //µ÷ÓÃ¶ÑÊÔÒ»ÊÔ
+    //è°ƒç”¨å †è¯•ä¸€è¯•
         vector<int> constructArr1(vector<int>& a) {
         const unsigned length = a.size();
-        //LÎªi×ó²àËùÓĞÔªËØµÄ³Ë»ı
+        //Lä¸ºiå·¦ä¾§æ‰€æœ‰å…ƒç´ çš„ä¹˜ç§¯
         vector<int>* L = new vector<int>(length);
         (*L)[0] = 1;
         for (int i = 1; i < length; ++i) {
             (* L)[i] = a[i - 1] * (*L)[i - 1];
         }
-        //RÎªiÓÒ²àËùÓĞÔªËØ³Ë»ı,Í¬Àí
+        //Rä¸ºiå³ä¾§æ‰€æœ‰å…ƒç´ ä¹˜ç§¯,åŒç†
         vector<int>* R = new vector<int>(length);
         (*R)[length - 1] = 1;
         for (int i = length - 2; i >= 0; --i) {
             (*R)[i] = a[i + 1] * (*R)[i + 1];
         }
-        //¹¹½¨Êä³övector
-        vector<int>* answer = new vector<int>(length);//Ò»¶¨Òª³õÊ¼»¯³¤¶È£¬·ñÔòÎŞ·¨Ê¹ÓÃÏÂ±ê·ÃÎÊ
+        //æ„å»ºè¾“å‡ºvector
+        vector<int>* answer = new vector<int>(length);//ä¸€å®šè¦åˆå§‹åŒ–é•¿åº¦ï¼Œå¦åˆ™æ— æ³•ä½¿ç”¨ä¸‹æ ‡è®¿é—®
         for (int i = 0; i < length; ++i) {
             (*answer)[i] = (*L)[i] * (*R)[i];
         }
         return *answer;
     }
     
-    //¼ò»¯Ò»ÏÂĞ´·¨
+    //ç®€åŒ–ä¸€ä¸‹å†™æ³•
     vector<int> constructArr(vector<int>& a){
         const unsigned length = a.size();
         int temp = 1;
@@ -84,7 +84,7 @@ public:
         for(int i = 0; i < length; temp *= a[i], ++i){
             answer[i] = temp;
         }
-        //ÖØÖÃtemp,½øĞĞºó×º±éÀú
+        //é‡ç½®temp,è¿›è¡Œåç¼€éå†
         temp = 1;
         for(int i = length - 1; i >= 0; temp *= a[i], --i){
             answer[i] *= temp;

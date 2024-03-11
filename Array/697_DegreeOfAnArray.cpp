@@ -1,14 +1,14 @@
-/*Êý×éµÄ¶È*/
-/*¸ø¶¨Ò»¸ö·Ç¿ÕÇÒÖ»°üº¬·Ç¸ºÊýµÄÕûÊýÊý×énums£¬
-Êý×éµÄ¶ÈµÄ¶¨ÒåÊÇÖ¸Êý×éÀïÈÎÒ»ÔªËØ³öÏÖÆµÊýµÄ×î´óÖµ¡£
-ÄãµÄÈÎÎñÊÇÔÚ nums ÖÐÕÒµ½Óë?nums?ÓµÓÐÏàÍ¬´óÐ¡µÄ¶ÈµÄ×î¶ÌÁ¬Ðø×ÓÊý×é£¬·µ»ØÆä³¤¶È¡£*/
+/*æ•°ç»„çš„åº¦*/
+/*ç»™å®šä¸€ä¸ªéžç©ºä¸”åªåŒ…å«éžè´Ÿæ•°çš„æ•´æ•°æ•°ç»„numsï¼Œ
+æ•°ç»„çš„åº¦çš„å®šä¹‰æ˜¯æŒ‡æ•°ç»„é‡Œä»»ä¸€å…ƒç´ å‡ºçŽ°é¢‘æ•°çš„æœ€å¤§å€¼ã€‚
+ä½ çš„ä»»åŠ¡æ˜¯åœ¨ nums ä¸­æ‰¾åˆ°ä¸Ž?nums?æ‹¥æœ‰ç›¸åŒå¤§å°çš„åº¦çš„æœ€çŸ­è¿žç»­å­æ•°ç»„ï¼Œè¿”å›žå…¶é•¿åº¦ã€‚*/
 #include <algorithm>
 #include <iostream>
 #include <vector>
 
 using namespace std;
 
-//¾¿¼«±©Á¦½â·¨ ³¬Ê±
+//ç©¶æžæš´åŠ›è§£æ³• è¶…æ—¶
 class degree {
 public:
     int number;

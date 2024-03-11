@@ -1,4 +1,4 @@
-/*归并两个有序数组*/
+/*褰掑苟涓や釜鏈夊簭鏁扮粍*/
 #include <iostream>
 #include <vector>
 

@@ -1,15 +1,15 @@
-/*1±ÈÌØºÍ2±ÈÌØ×Ö·û*/
-/*ÓÐÁ½ÖÖÌØÊâ×Ö·û£º
-µÚÒ»ÖÖ×Ö·û¿ÉÒÔÓÃÒ»±ÈÌØ 0 ±íÊ¾
-µÚ¶þÖÖ×Ö·û¿ÉÒÔÓÃÁ½±ÈÌØ£¨10 »ò 11£©±íÊ¾
-¸øÄãÒ»¸öÒÔ 0 ½áÎ²µÄ¶þ½øÖÆÊý×é bits £¬Èç¹û×îºóÒ»¸ö×Ö·û±ØÐëÊÇÒ»¸öÒ»±ÈÌØ×Ö·û£¬Ôò·µ»Ø true ¡£
+/*1æ¯”ç‰¹å’Œ2æ¯”ç‰¹å­—ç¬¦*/
+/*æœ‰ä¸¤ç§ç‰¹æ®Šå­—ç¬¦ï¼š
+ç¬¬ä¸€ç§å­—ç¬¦å¯ä»¥ç”¨ä¸€æ¯”ç‰¹ 0 è¡¨ç¤º
+ç¬¬äºŒç§å­—ç¬¦å¯ä»¥ç”¨ä¸¤æ¯”ç‰¹ï¼ˆ10 æˆ– 11ï¼‰è¡¨ç¤º
+ç»™ä½ ä¸€ä¸ªä»¥ 0 ç»“å°¾çš„äºŒè¿›åˆ¶æ•°ç»„ bits ï¼Œå¦‚æžœæœ€åŽä¸€ä¸ªå­—ç¬¦å¿…é¡»æ˜¯ä¸€ä¸ªä¸€æ¯”ç‰¹å­—ç¬¦ï¼Œåˆ™è¿”å›ž true ã€‚
 */
 #include <iostream>
 #include <vector>
 
 using namespace std;
 
-//¼òµ¥Ìø¸ñ×Ó£¬Ê±¼ä¸´ÔÓ¶ÈO(n)£¬»÷°Ü100%
+//ç®€å•è·³æ ¼å­ï¼Œæ—¶é—´å¤æ‚åº¦O(n)ï¼Œå‡»è´¥100%
 bool isOneBitCharacter(vector<int>& bits) {
     const int len = bits.size();
     int pos = 0;

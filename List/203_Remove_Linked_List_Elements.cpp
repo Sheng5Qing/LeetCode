@@ -13,7 +13,7 @@ struct ListNode {
 class Solution {
 public:
     ListNode* removeElements(ListNode* head, int val) {
-        //设置头前结点，统一操作
+        //璁剧疆澶村墠缁撶偣锛岀粺涓�鎿嶄綔
         ListNode* pre_head = new ListNode(0);
         pre_head->next = head;
         ListNode *tmp = pre_head;

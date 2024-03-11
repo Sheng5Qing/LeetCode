@@ -1,4 +1,4 @@
-/*ÓĞĞòÊı×éµÄÆ½·½*/
+/*æœ‰åºæ•°ç»„çš„å¹³æ–¹*/
 #include <iostream>
 #include <vector>
 #include <math.h>
@@ -7,7 +7,7 @@ using namespace std;
 
 class Solution {
 public:
-    //·Çµİ¼õ£¬´óÍ·ÔÚÁ½±ß
+    //éé€’å‡ï¼Œå¤§å¤´åœ¨ä¸¤è¾¹
     vector<int> sortedSquares(vector<int>& nums) {
         vector<int> ret(nums.size(),0);
         int l = 0, r = nums.size() - 1;

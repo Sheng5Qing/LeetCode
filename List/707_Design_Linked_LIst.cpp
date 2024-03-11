@@ -2,7 +2,7 @@
 
 class MyLinkedList {
 public:
-    //Á´±í½áµã½á¹¹Ìå
+    //é“¾è¡¨ç»“ç‚¹ç»“æž„ä½“
     typedef struct LinkedNode{
         int val;
         LinkedNode *next;
@@ -10,7 +10,7 @@ public:
     }LinkedNode;
 
     MyLinkedList() {
-        //ÐéÄâÍ·½áµã
+        //è™šæ‹Ÿå¤´ç»“ç‚¹
         _dummyHead = new LinkedNode(0);
         _size = 0;
     }
@@ -20,7 +20,7 @@ public:
             return -1;
         }
         LinkedNode* cur = _dummyHead->next;
-        //index´Ó0¿ªÊ¼
+        //indexä»Ž0å¼€å§‹
         while (index--) {
             cur = cur->next;
         }
