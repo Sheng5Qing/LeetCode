@@ -42,7 +42,7 @@ public:
         record[0] = 1;       // 前缀和为0出现的次数为1，此时为空区间
         for(const int &num : nums){
             preSum += num;  // 遍历到当前数字的前缀和preSum
-            if(record.count(preSum - k)){   // 检查当前的前缀和preSum减去目标值k后的结果是否在哈希表mp中存在
+            if(record.count(preSum - k)){   // 检查当前的前缀和preSum减去目标值k后的结果是否在哈希表record中存在
                 ans += record[preSum - k];  // 有几个区间前缀和等于preSum-k，答案就加上几
             }
             record[preSum] ++;    // 前缀和为preSum的区间个数+1
